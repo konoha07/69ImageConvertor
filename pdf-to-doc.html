@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>69LABS - PDF to Microsoft Doc Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-inter bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <div class="min-h-screen flex flex-col items-center p-4">
+        <header class="w-full max-w-4xl flex justify-between items-center py-4 px-6 mb-8">
+            <div class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40/6366F1/FFFFFF?text=P" alt="69LABS Logo" class="rounded-lg">
+                <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">69LABS</span>
+            </div>
+
+            <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path id="moonIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    <path id="sunIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1m-1 0h-1M5.636 5.636l-.707-.707M18.364 18.364l.707.707M5.636 18.364l-.707.707M18.364 5.636l.707-.707" class="hidden"></path>
+                </svg>
+            </button>
+        </header>
+
+        <main class="w-full max-w-4xl bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+            <h1 class="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-gray-200">PDF to Microsoft Doc Converter</h1>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-8">Upload a PDF file to convert it into a Microsoft Word document.</p>
+
+            <div class="mb-8 p-6 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg text-center cursor-pointer hover:border-indigo-500 transition-colors duration-200" id="dropArea">
+                <input type="file" id="pdfInput" accept="application/pdf" class="hidden">
+                <p class="text-gray-600 dark:text-gray-400 text-lg">Drag & Drop a PDF file here, or <span class="text-indigo-600 dark:text-indigo-400 font-semibold">click to select</span></p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">(Only one PDF file at a time)</p>
+            </div>
+
+            <div id="pdfToDocContent" class="hidden">
+                <div class="flex flex-col items-center mb-8">
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">Selected PDF: <span id="selectedPdfInfo" class="font-normal text-base"></span></h3>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button id="convertPdfToDocBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50">
+                        Convert to Doc
+                    </button>
+                    <a id="downloadDocBtn" class="hidden bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50 text-center cursor-pointer" download="converted-document.docx">
+                        Download Doc
+                    </a>
+                    <button id="uploadNewPdfBtn" class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gray-300 focus:ring-opacity-50">
+                        Upload New PDF
+                    </button>
+                </div>
+                <p id="conversionStatus" class="text-center text-sm text-gray-500 mt-4"></p>
+                <div id="loadingSpinner" class="hidden flex justify-center items-center mt-4">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600 dark:border-indigo-400"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="mt-8 text-center text-gray-500 dark:text-gray-400 text-sm">
+            <p>Powered by Open-Source & Client-Side Technologies.</p>
+            <p class="mt-2">Completely Free to Use. No Registration Required.</p>
+            <p class="mt-1">Monetized through Google Ads to support development.</p>
+            <p class="mt-1">
+                <a href="index.html" class="text-indigo-600 dark:text-indigo-400 hover:underline">Back to Home</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="pdf-to-doc.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

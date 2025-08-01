@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>69LABS - Free Online File Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="font-inter bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+        <header class="w-full max-w-4xl flex justify-between items-center py-4 px-6 mb-4">
+            <div class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40/6366F1/FFFFFF?text=P" alt="69LABS Logo" class="rounded-lg">
+                <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">69LABS</span>
+            </div>
+            <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path id="moonIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    <path id="sunIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1m-1 0h-1M5.636 5.636l-.707-.707M18.364 18.364l.707.707M5.636 18.364l-.707.707M18.364 5.636l.707-.707" class="hidden"></path>
+                </svg>
+            </button>
+        </header>
+
+        <h1 class="text-5xl font-extrabold text-center mb-8 leading-tight"> Seamlessly Convert Your Files, <span class="text-indigo-600 dark:text-indigo-400">Effortlessly.</span>
+        </h1>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-5xl mb-8">
+            <!-- PDF Tools Card - Links to PDF tools landing page -->
+            <a href="pdf-tools-landing.html" class="block bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl group">
+                <i class="fas fa-file-pdf text-red-500 text-6xl mb-4"></i>
+                <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200">PDF Tools</h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 text-sm">Merge, split, compress, and convert PDFs with ease.</p>
+            </a>
+
+            <a href="image-converter.html" class="block bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl group">
+                <i class="fas fa-image text-blue-500 text-6xl mb-4"></i>
+                <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200">Image Converter</h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 text-sm">Resize, compress, and convert image formats.</p>
+            </a>
+
+            <a href="video-converter.html" class="block bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl group">
+                <i class="fas fa-file-video text-green-500 text-6xl mb-4"></i>
+                <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200">Video Converter</h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 text-sm">Convert video formats, extract audio, and more.</p>
+            </a>
+
+            <a href="audio-converter.html" class="block bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl group">
+                <i class="fas fa-file-audio text-indigo-500 text-6xl mb-4"></i>
+                <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200">Audio Converter</h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 text-sm">Convert audio formats and adjust quality.</p>
+            </a>
+        </section>
+
+        <footer class="mt-16 text-center text-gray-500 dark:text-gray-400 text-sm">
+            <p>Powered by Open-Source & Client-Side Technologies.</p>
+            <p class="mt-2">Completely Free to Use. No Registration Required.</p>
+            <p class="mt-1">Monetized through Google Ads to support development.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

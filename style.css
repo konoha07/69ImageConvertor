@@ -1,0 +1,169 @@
+/* style.css */
+
+/* Basic body styling and smooth transitions for dark mode */
+body {
+    font-family: 'Inter', sans-serif; /* Sets the font we imported */
+    /* Note: Tailwind's transition-colors duration-300 on body in HTML already handles the smooth transition.
+       This line here could be redundant but doesn't hurt. */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Base styles for the dark mode toggle button */
+#darkModeToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; /* Fixed width for the button */
+    height: 48px; /* Fixed height for the button */
+    border: none;
+    cursor: pointer;
+    position: relative; /* Needed for positioning the inner toggle */
+    overflow: hidden; /* Hides parts of the toggle that are outside */
+}
+
+/* Styling for the sun/moon icon inside the button */
+#darkModeToggle svg {
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for icons */
+}
+
+/* Hide the sun icon by default in light mode */
+body:not(.dark) #sunIcon {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+/* Hide the moon icon in dark mode */
+body.dark #moonIcon {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+/* Show the sun icon in dark mode */
+body.dark #sunIcon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* General styling for the main container to center content */
+.min-h-screen {
+    min-height: 100vh; /* Makes sure the container takes up at least the full height of the screen */
+}
+
+/* Styling for the header, making it stick to the top and look good */
+header {
+    background-color: transparent; /* Transparent background */
+    z-index: 10; /* Ensures it stays on top of other elements */
+}
+
+/* Logo and brand name styling */
+header img {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for the logo */
+}
+
+/* Main title styling */
+h1 {
+    letter-spacing: -0.025em; /* Slightly tighter letter spacing */
+}
+
+/* Styling for the individual conversion cards */
+.grid > div,
+.grid > a { /* Added 'a' here because your Image Card is an 'a' tag */
+    min-height: 200px; /* Ensures cards have a minimum height */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+}
+
+/* Dark mode specific styles for cards */
+body.dark .grid > div,
+body.dark .grid > a { /* Added 'a' here for dark mode cards as well */
+    border-color: rgba(255, 255, 255, 0.05); /* Lighter border in dark mode */
+}
+
+/* Styling for the "Start Converting" button */
+button.bg-indigo-600 {
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3); /* Shadow for the button */
+}
+
+/* Hover effect for the button */
+button.bg-indigo-600:hover {
+    transform: translateY(-2px) scale(1.02); /* Slight lift and scale on hover */
+}
+
+/* Focus (when clicked or tabbed to) effect for the button */
+button.bg-indigo-600:focus {
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.5); /* Ring effect on focus */
+}
+
+/* Footer text styling */
+footer p {
+    line-height: 1.5; /* Spacing between lines */
+}
+
+/* --- Core Dark Mode Styles ADDED HERE --- */
+/* These styles override default light mode colors when 'dark' class is present on body */
+
+body.dark {
+    background-color: #1a202c !important; /* Dark background for the body */
+    color: #e2e8f0 !important; /* Light text color for the body */
+}
+
+/* Override specific Tailwind classes to ensure dark mode works */
+/* These target elements that have light mode colors defined by Tailwind classes in HTML */
+
+.dark .bg-gray-100 { /* For the body's default light gray background */
+    background-color: #1a202c !important;
+}
+
+.dark .text-gray-900 { /* For general dark text */
+    color: #e2e8f0 !important;
+}
+
+.dark .text-gray-800 { /* For text in h1, h2, etc. that might be gray-800 */
+    color: #e2e8f0 !important;
+}
+
+.dark .bg-white { /* For cards or main content blocks that are white */
+    background-color: #2d3748 !important; /* A slightly lighter dark gray for content blocks */
+}
+
+.dark .text-gray-600 { /* For lighter gray text like descriptions */
+    color: #a0aec0 !important; /* A medium gray for better contrast */
+}
+
+.dark .text-gray-500 { /* For footer text */
+    color: #a0aec0 !important;
+}
+
+/* Dark mode for borders */
+.dark .border-gray-200,
+.dark .border-gray-300,
+.dark .border-gray-600 {
+    border-color: #4a5568 !important; /* A darker border color */
+}
+
+/* Dark mode for specifically light gray backgrounds, like the options section in image converter */
+.dark .bg-gray-50 {
+    background-color: #2d3748 !important; /* Matches main content block dark background */
+}
+
+/* Ensure the dark mode toggle button itself looks right in dark mode */
+.dark .bg-gray-200 {
+    background-color: #4a5568 !important; /* Darker background for the toggle button */
+}
+
+.dark .text-gray-700 {
+    color: #e2e8f0 !important; /* Lighter icon color for the toggle button */
+}
+
+/* Important: The `!important` flag is used here to ensure these styles override
+   Tailwind's utility classes. While not always ideal, it's a quick and effective
+   way to guarantee the desired dark mode appearance when you have existing Tailwind classes.
+   For larger projects, you might configure Tailwind's `darkMode` property to 'class'
+   and let Tailwind handle it more directly.
+*/
+
+/* UPDATED: STYLE FOR PROGRESS BAR ADDED HERE */
+#progressBar {
+    transition: width 0.3s ease-in-out;
+}
